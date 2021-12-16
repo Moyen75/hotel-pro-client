@@ -1,0 +1,49 @@
+
+/* banner style */
+.banner{
+    background-image: url('../images/banner-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    height: 90vh;
+    align-items: center;
+    color: white;
+}
+.banner-button{
+    background-color: tomato;
+    color: white;
+    padding: 6px 15px;
+    font-size: 20px;
+    border: none;
+    border-radius: 6px;
+    margin-top: 20px;
+}
+/* booking */
+.booking{
+    background-image: url('../images//book-bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    height: 80vh;
+    align-items: center;
+    padding: 30px;
+}
+.booking-input{
+    background-color: tomato;
+    color: white;
+    padding: 10px 30px;
+    font-size: 22px;
+    margin: 20px;
+    border: none;
+    border-radius: 6px;
+}
+.booking-input:hover{
+    background-color: white;
+    color: tomato;
+    border: 1px solid black;
+}
