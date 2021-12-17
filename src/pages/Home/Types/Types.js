@@ -4,6 +4,7 @@ import React from 'react';
 import breakfast from '../../../images/breakfast_item.jpg'
 import launch from '../../../images/lunch_item.jpg'
 import dinner from '../../../images/dinner_item.jpg'
+import { Link } from 'react-router-dom';
 
 const Types = () => {
     return (
@@ -32,6 +33,7 @@ const Types = () => {
                                 <Typography sx={{ textAlign: 'left', paddingTop: "15px" }}>
                                     Dreamcatcher squid ennui cliche chicharros nes echo small batch jean shorts hexagon street art knausgaard wolf
                                 </Typography>
+                                <Link  to="/breakfast" className='category-button'>SEE MENUS</Link>
                             </Box>
                         </Box>
                     </Container>
@@ -56,6 +58,7 @@ const Types = () => {
                                 <Typography sx={{ textAlign: 'left', paddingTop: "15px" }}>
                                     Dreamcatcher squid ennui cliche chicharros nes echo small batch jean shorts hexagon street art knausgaard wolf
                                 </Typography>
+                                <Link  to="/launch" className='category-button'>SEE MENUS</Link>
                             </Box>
                         </Box>
                     </Container>
@@ -80,6 +83,7 @@ const Types = () => {
                                 <Typography sx={{ textAlign: 'left', paddingTop: "15px" }}>
                                     Dreamcatcher squid ennui cliche chicharros nes echo small batch jean shorts hexagon street art knausgaard wolf
                                 </Typography>
+                                <Link  to="/dinner" className='category-button'>SEE MENUS</Link>
                             </Box>
                         </Box>
                     </Container>
