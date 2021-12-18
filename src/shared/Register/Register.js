@@ -30,7 +30,7 @@ const Register = () => {
     }
     const success = () => {
         swal(
-            'Great job!',
+            `Hello ${userData.name}!`,
             'You are successfully sign up!',
             'success'
         )
@@ -41,7 +41,7 @@ const Register = () => {
             error()
             return
         } else {
-            emailSignUp(userData.email, userData.password1, success, navigate)
+            emailSignUp(userData.email, userData.password1, userData.name, success, navigate)
         }
     }
 
@@ -90,7 +90,6 @@ const Register = () => {
                                     <input className='submit' style={{ display: "block", margin: "10px auto" }} type='submit' value='Register Now' />
                                 </form>
                             </Box>
-                              <button onClick={success}>si</button>
                             <Box sx={{ marginY: '15px' }}>
                                 <span>Already Have an Account?</span> <Link className='link' to='/login'>Sign in</Link>
                             </Box>

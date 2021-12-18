@@ -33,7 +33,7 @@ const useFirebase = () => {
         setLoading(true)
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                success()
+                success(result.user.displayName)
                 navigate('/')
                 updateProfile(auth.currentUser, {
                     displayName: name

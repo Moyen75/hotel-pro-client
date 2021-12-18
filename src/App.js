@@ -12,7 +12,7 @@ import DinnerDetails from './shared/DinnerDetails/DinnerDetails';
 import Login from './shared/Login/Login';
 import AuthProvider from './context/AuthProvider/AuthProvider';
 import Register from './shared/Register/Register';
-import PrivateRoute from './pages/Home/Navigation/PrivateRoute';
+import PrivateRoute from './shared/PrivateRoute/PrivateRoute';
 
 function App() {
   return (
