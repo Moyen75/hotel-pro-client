@@ -123,6 +123,12 @@
     border: 1px solid white;
     color: white;
     background-color: #ffffff00;
+    transition: all .3s;
+}
+.sign-up button:hover{
+    color: white;
+    background-color: tomato;
+    cursor: pointer;
 }
 .main-footer{
     background-color: #363e50;
@@ -230,4 +236,72 @@
 .breakfast-item:hover .breakfast-order{
     opacity: 1;
     bottom: 45px; 
+}
+/* details */
+.details-btn{
+    padding: 6px 10px;
+    border:1px solid tomato;
+    border-radius: 5px;
+    margin: 0 9px;
+    width: 150px;
+    color: tomato;
+    transition: all 0.3s;
+}
+.details-btn:hover{
+    background-color: tomato;
+    color: white;
+    cursor: pointer;
+}
+/* login */
+
+
+.login-input{
+      width: 50%;
+      margin: 5px 0;
+      background-color: rgb(255, 163, 149);
+      border: 1px solid rgb(255, 163, 149);
+      padding: 5px 10px;
+      color: white;
+      border-radius: 5px;
+}
+label{
+    position: relative;
+}
+.input {
+    position: absolute;
+    background-color: red;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1px 7px 25px;
+    border-radius: 0 5px 5px 0;
+    color: white;
+}
+.submit{
+    margin: 16px 0;
+    display: inline-block;
+    padding: 11px 15px;
+    background-color: tomato;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.submit:hover{
+    background-color: white;
+    color: tomato;
+    border: 1px solid tomato;  
+    cursor: pointer;  
+}
+.link{
+    text-decoration: none;
+    display: inline-block;
+}
+.log-out{
+    border-radius: 2px;
+    color: gray;
+    border: 1px solid gray;
+    padding: 3px;
+}
+.log-out:hover{
+    cursor: pointer;
 }
