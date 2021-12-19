@@ -6,6 +6,7 @@ import swal from 'sweetalert';
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import Footer from '../../pages/Home/Footer/Footer';
 
 
 const Register = () => {
@@ -102,6 +103,7 @@ const Register = () => {
                     </Grid>
                 </Box>
             </Container>
+            <Footer></Footer>
         </Box>
     );
 };

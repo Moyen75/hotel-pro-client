@@ -7,6 +7,7 @@ import swal from 'sweetalert';
 import useAuth from '../../hooks/useAuth';
 import { useLocation, useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
+import Footer from '../../pages/Home/Footer/Footer';
 
 
 const Login = () => {
@@ -72,6 +73,7 @@ const Login = () => {
                     </Grid>
                 </Box>
             </Container>
+            <Footer></Footer>
         </Box>
     );
 };

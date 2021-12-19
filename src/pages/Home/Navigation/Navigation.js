@@ -12,6 +12,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import useAuth from '../../../hooks/useAuth';
+import { Link } from 'react-router-dom';
 
 
 const Navigation = () => {
@@ -79,33 +80,46 @@ const Navigation = () => {
                             <Box sx={{ marginX: 'auto' }}>
                                 <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
 
-                                    <Button
-                                        onClick={handleCloseNavMenu}
+                                    <Link className='link links' to='/'
                                         sx={{ my: 2, display: 'block', color: 'gray' }}
                                     >
                                         HOME
-                                    </Button>
-                                    <Button
-                                        onClick={handleCloseNavMenu}
+                                    </Link>
+                                    <Link className='link links' to='/menus'
                                         sx={{ my: 2, display: 'block', color: 'gray' }}
                                     >
                                         OUR MENUS
-                                    </Button>
-                                    <Button
-                                        onClick={handleCloseNavMenu}
+                                    </Link>
+                                    <Link className='link links' to='/breakfast'
                                         sx={{ my: 2, display: 'block', color: 'gray' }}
                                     >
-                                        BLOG ENTRIES
-                                    </Button>
-                                    <Button
-                                        onClick={handleCloseNavMenu}
+                                        BREAKFAST ITEMS
+                                    </Link>
+                                    <Link className='link links' to='/launch'
                                         sx={{ my: 2, display: 'block', color: 'gray' }}
+                                    >
+                                        LAUNCH ITEMS
+                                    </Link>
+                                    <Link className='link links' to='/dinner'
+                                        sx={{ my: 2, display: 'block', color: 'gray' }}
+                                    >
+                                        DINNER ITEMS
+                                    </Link>
+                                    <Link className='link links' to='/contact'
+                                        sx={{ my: 2, display: 'inline-block', color: 'gray' }}
                                     >
                                         CONTACT US
-                                    </Button>
+                                    </Link>
+                                    <Link className='link links' to='/cart'
+                                        sx={{ my: 2, display: 'block', color: 'gray' }}
+                                    >
+                                        <i class="fas fa-cart-plus"></i>
+                                    </Link>
+
+
                                 </Box>
                             </Box>
-                            <Box sx={{ flexGrow: 0 }}>
+                            {user.email ? <Box sx={{ flexGrow: 0 }}>
                                 <Tooltip>
                                     {
                                         user.photoURL ? <Avatar alt='new' src={user.photoURL} /> : <Box sx={{ display: "flex", justifyContent: 'center' }}>
@@ -117,8 +131,13 @@ const Navigation = () => {
                                     }
                                 </Tooltip>
 
-                            </Box>
-                            {user.email&&<button className='log-out' onClick={logOut} style={{ margin: '0 2px' }}>log out</button>}
+                            </Box> :
+                                <Link className='link links' to='/login'
+                                    sx={{ my: 2, display: 'block', color: 'gray' }}
+                                >
+                                    log in
+                                </Link>}
+                            {user.email && <button className='log-out' onClick={logOut} style={{ margin: '0 2px' }}>log out</button>}
                         </Toolbar>
                     </Container>
                 </AppBar>

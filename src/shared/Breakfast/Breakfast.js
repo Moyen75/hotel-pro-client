@@ -3,6 +3,7 @@ import { Box } from '@mui/system';
 import React from 'react';
 import { useNavigate } from 'react-router';
 import useBreakfast from '../../hooks/useBreakfast';
+import Footer from '../../pages/Home/Footer/Footer';
 
 const Breakfast = () => {
     const breakfast = useBreakfast()
@@ -39,6 +40,7 @@ const Breakfast = () => {
                     </Grid>
                 </Container>
             }
+            <Footer></Footer>
         </Box>
     );
 };

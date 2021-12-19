@@ -4,6 +4,7 @@ import useLaunch from '../../hooks/useLaunch'
 
 import React from 'react';
 import { useNavigate } from 'react-router';
+import Footer from '../../pages/Home/Footer/Footer';
 
 const Launch = () => {
     const launch = useLaunch()
@@ -40,6 +41,7 @@ const Launch = () => {
                     </Grid>
                 </Container>
             }
+            <Footer></Footer>
         </Box>
     );
 };

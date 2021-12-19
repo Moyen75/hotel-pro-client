@@ -6,10 +6,10 @@ import { useEffect, useState } from "react";
 initializeAuthentication()
 const useFirebase = () => {
     const [error, setError] = useState('')
-    const [loading, setLoading] = useState(false)
+    const [loading, setLoading] = useState(true)
     const [user, setUser] = useState({})
-
     const auth = getAuth();
+        
     // google sign in
     const googleSignIn = (success, navigate, location) => {
         setLoading(true)

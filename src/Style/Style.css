@@ -296,6 +296,28 @@ label{
     text-decoration: none;
     display: inline-block;
 }
+.links{
+    margin: 0 10px;
+    color: black;
+    position: relative;
+}
+.links::after{
+    content: '';
+    background-color: tomato;
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    transform: scaleX(0);
+    transition: all .3s linear;
+}
+.links:hover{
+    color: gray;
+}
+.links:hover.links::after{
+    transform: scaleX(1);
+}
 .log-out{
     border-radius: 2px;
     color: gray;
@@ -304,4 +326,18 @@ label{
 }
 .log-out:hover{
     cursor: pointer;
+}
+
+/* details */
+.delivery-options{
+    position: relative;
+}
+.delivery-options::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background-color: gray;
 }
