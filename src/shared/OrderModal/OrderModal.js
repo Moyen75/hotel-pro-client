@@ -39,7 +39,7 @@ const OrderModal = ({ open, handleClose, match }) => {
 
     const handleOrderData = e => {
         // e.preventDefault()
-        fetch('hhttps://arcane-tor-66544.herokuapp.com/order', {
+        fetch('https://arcane-tor-66544.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -136,6 +136,7 @@ const OrderModal = ({ open, handleClose, match }) => {
                                         variant="standard"
                                         required
                                     />
+                                    {/* <input className='submit' type='submit' value='Confirm Order' /> */}
                                 </form>
                             </Grid>
                             <Grid item xs={12} md={6}>
