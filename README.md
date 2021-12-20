@@ -1,4 +1,4 @@
-### Hotel Transylvania
+# Hotel Transylvania
 
 This is [live site](https://hotel-pro-max.web.app/).
 
