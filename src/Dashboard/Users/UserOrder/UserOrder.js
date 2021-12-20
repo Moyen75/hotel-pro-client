@@ -52,6 +52,7 @@ const UserOrder = () => {
                         <TableCell align="center">status</TableCell>
                         <TableCell align="center">Total Cost</TableCell>
                         <TableCell align="center">Cancel Order</TableCell>
+                        <TableCell align="center">Payment status</TableCell>
                         <TableCell align="center">Address </TableCell>
                     </TableRow>
                 </TableHead>
@@ -68,6 +69,7 @@ const UserOrder = () => {
                             <TableCell align="center">{row?.status}</TableCell>
                             <TableCell align="center">${row?.total}</TableCell>
                             <TableCell align="center"><button onClick={() => handleDelete(row._id)}><i class="fas fa-trash-alt"></i></button></TableCell>
+                            <TableCell align="center">unpaid</TableCell>
                             <TableCell align="center">{row.address}</TableCell>
                         </TableRow>
                     ))}
