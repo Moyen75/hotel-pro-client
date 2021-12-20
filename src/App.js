@@ -14,6 +14,8 @@ import AuthProvider from './context/AuthProvider/AuthProvider';
 import Register from './shared/Register/Register';
 import PrivateRoute from './shared/PrivateRoute/PrivateRoute';
 import Dashboard from './Dashboard/Dashboard/Dashboard';
+import UserOrder from './Dashboard/Users/UserOrder/UserOrder';
+import DashboardHome from './Dashboard/DashboardHome/DashboardHome';
 
 function App() {
   return (
@@ -27,7 +29,10 @@ function App() {
             <Route path='/breakfast-details/:id' element={<PrivateRoute><BreakfastDetails /></PrivateRoute>}></Route>
             <Route path='/launch-details/:id' element={<PrivateRoute><LaunchDetails /></PrivateRoute>}></Route>
             <Route path='/dinner-details/:id' element={<PrivateRoute><DinnerDetails /></PrivateRoute>}></Route>
-            <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}></Route>
+            <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
+              <Route path='' element={<DashboardHome></DashboardHome>}></Route>
+              <Route path='userOrders' element={<UserOrder></UserOrder>}></Route>
+            </Route>
             <Route path='/launch' element={<Launch />}></Route>
             <Route path='/dinner' element={<Dinner />}></Route>
             <Route path='/login' element={<Login />}></Route>

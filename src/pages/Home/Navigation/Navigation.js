@@ -30,9 +30,9 @@ const Navigation = () => {
 
 
     return (
-        <Box sx={{ backgroundColor: '#d9edf78f' }}>
+        <Box sx={{ backgroundColor: '#00458dd1' }}>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" sx={{ backgroundColor: '#d9edf78f', color: 'gray', boxShadow: 'none', border: 'none' }}>
+                <AppBar position="static" sx={{ backgroundColor: '#00458dd1', color: 'gray', boxShadow: 'none', border: 'none' }}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
 
@@ -85,10 +85,10 @@ const Navigation = () => {
                                     >
                                         HOME
                                     </Link>
-                                    <Link className='link links' to='/menus'
+                                    <Link className='link links' to='/dashboard'
                                         sx={{ my: 2, display: 'block', color: 'gray' }}
                                     >
-                                        OUR MENUS
+                                        DASHBOARD
                                     </Link>
                                     <Link className='link links' to='/breakfast'
                                         sx={{ my: 2, display: 'block', color: 'gray' }}

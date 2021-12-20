@@ -24,14 +24,15 @@ const OrderModal = ({ open, handleClose, match }) => {
     const { user } = useAuth();
     const userName = user.displayName;
     const userEmail = user.email;
-    const users = { userName, userEmail, total, match }
+    const status = 'pending'
+    const users = { userName, userEmail }
     const [userInfo, setUserInfo] = useState(users)
     const navigate = useNavigate()
 
     const handleUserInfo = e => {
         const field = e.target.name;
         const value = e.target.value;
-        const newInfo = { ...users, ...userInfo }
+        const newInfo = {  ...userInfo }
         newInfo[field] = value;
         setUserInfo(newInfo)
     }
@@ -39,12 +40,13 @@ const OrderModal = ({ open, handleClose, match }) => {
 
     const handleOrderData = e => {
         // e.preventDefault()
+        const allData={...userInfo, total, match, status}
         fetch('https://arcane-tor-66544.herokuapp.com/order', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(userInfo)
+            body: JSON.stringify(allData)
         })
             .then(res => res.json())
             .then(data => {
@@ -82,24 +84,6 @@ const OrderModal = ({ open, handleClose, match }) => {
                                     Shipping
                                 </Typography>
                                 <form onSubmit={handleOrderData}>
-                                    <TextField
-                                        id="standard-basic"
-                                        placeholder={user?.displayName}
-                                        sx={{ width: '90%' }}
-                                        defaultValue={user?.displayName}
-                                        onBlur={handleUserInfo}
-                                        name='userName'
-                                        variant="standard"
-                                    />
-                                    <TextField
-                                        id="standard-basic"
-                                        placeholder={user?.email}
-                                        defaultValue={user?.email}
-                                        sx={{ width: '90%' }}
-                                        onBlur={handleUserInfo}
-                                        name='userEmail'
-                                        variant="standard"
-                                    />
                                     <TextField
                                         id="standard-basic"
                                         label='Phone Number'

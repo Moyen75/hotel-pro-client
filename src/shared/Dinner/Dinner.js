@@ -4,12 +4,20 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import useDinner from '../../hooks/useDinner';
 import Footer from '../../pages/Home/Footer/Footer';
+import OrderModal from '../OrderModal/OrderModal';
 
 const Dinner = () => {
+    const [open, setOpen] = React.useState(false);
+    const handleOpen = () => setOpen(true);
+    const handleClose = () => setOpen(false);
     const breakfast = useDinner()
     const navigate = useNavigate()
     const handleDetails = id => {
         navigate(`/dinner-details/${id}`)
+    }
+    const handleOrder = () => {
+        handleOpen()
+
     }
     return (
         <Box>
@@ -27,17 +35,23 @@ const Dinner = () => {
                                         <Typography variant='h6' className="price-type">
                                             ${b.price}
                                         </Typography>
+                                        < OrderModal
+                                    open={open}
+                                    match={b}
+                                    handleClose={handleClose}
+                                ></OrderModal >
                                     </Box>
                                     <Box className='breakfast-seeMore'>
                                         <button onClick={() => handleDetails(b._id)}>SEE DETAILS</button>
                                     </Box>
                                     <Box className='breakfast-order'>
-                                        <button>ORDER NOW</button>
+                                    <button onClick={handleOrder} className='details-btn'>ORDER NOW</button>
                                     </Box>
                                 </Box>
                             </Grid>)
                         }
                     </Grid>
+                    
                 </Container>
             }
             <Footer></Footer>
