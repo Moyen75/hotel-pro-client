@@ -20,7 +20,6 @@ const UserOrder = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, [user.email, orders])
-    console.log(orders)
     const handleDelete = id => {
         fetch(`https://arcane-tor-66544.herokuapp.com/order/${id}`, {
             method: 'DELETE'
@@ -53,6 +52,7 @@ const UserOrder = () => {
                         <TableCell align="center">Total Cost</TableCell>
                         <TableCell align="center">Cancel Order</TableCell>
                         <TableCell align="center">Payment status</TableCell>
+                        <TableCell align="center">Pay Now</TableCell>
                         <TableCell align="center">Address </TableCell>
                     </TableRow>
                 </TableHead>
@@ -69,7 +69,8 @@ const UserOrder = () => {
                             <TableCell align="center">{row?.status}</TableCell>
                             <TableCell align="center">${row?.total}</TableCell>
                             <TableCell align="center"><button onClick={() => handleDelete(row._id)}><i class="fas fa-trash-alt"></i></button></TableCell>
-                            <TableCell align="center">unpaid</TableCell>
+                            <TableCell align="center">{row.paymentStatus}</TableCell>
+                            <TableCell align="center"><button>pay</button></TableCell>
                             <TableCell align="center">{row.address}</TableCell>
                         </TableRow>
                     ))}

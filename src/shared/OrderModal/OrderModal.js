@@ -25,6 +25,7 @@ const OrderModal = ({ open, handleClose, match }) => {
     const userName = user.displayName;
     const userEmail = user.email;
     const status = 'pending'
+    const paymentStatus = 'unpaid'
     const users = { userName, userEmail }
     const [userInfo, setUserInfo] = useState(users)
     const navigate = useNavigate()
@@ -40,7 +41,7 @@ const OrderModal = ({ open, handleClose, match }) => {
 
     const handleOrderData = e => {
         // e.preventDefault()
-        const allData={...userInfo, total, match, status}
+        const allData={...userInfo, total, match, status,paymentStatus}
         fetch('https://arcane-tor-66544.herokuapp.com/order', {
             method: 'POST',
             headers: {

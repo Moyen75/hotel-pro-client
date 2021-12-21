@@ -9,7 +9,7 @@ const useFirebase = () => {
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState({})
     const auth = getAuth();
-        
+
     // google sign in
     const googleSignIn = (success, navigate, location) => {
         setLoading(true)
@@ -17,6 +17,7 @@ const useFirebase = () => {
         signInWithPopup(auth, provider)
             .then(result => {
                 setUser(result.user)
+                saveUser(result.user.email, result.user.displayName, 'PUT')
                 success()
                 let from = location.state?.from?.pathname || "/";
                 navigate(from)
@@ -31,14 +32,17 @@ const useFirebase = () => {
     // create user with email and password
     const emailSignUp = (email, password, name, success, navigate) => {
         setLoading(true)
+
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
                 success(result.user.displayName)
+                saveUser(result.user.email, name, 'POST')
                 navigate('/')
                 updateProfile(auth.currentUser, {
                     displayName: name
                 }).then(result => {
                     setUser(result.user)
+
 
                 }).catch(error => {
                     setError(error.message)
@@ -92,6 +96,19 @@ const useFirebase = () => {
                 setError(error.message)
             })
             .finally(() => setLoading(false))
+    }
+
+    // save user to database
+    const saveUser = (email, displayName, method) => {
+        const userInfo = { email, displayName }
+        fetch('https://arcane-tor-66544.herokuapp.com/user', {
+            method: method,
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(userInfo)
+        })
+
     }
 
     return {

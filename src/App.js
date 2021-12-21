@@ -16,6 +16,8 @@ import PrivateRoute from './shared/PrivateRoute/PrivateRoute';
 import Dashboard from './Dashboard/Dashboard/Dashboard';
 import UserOrder from './Dashboard/Users/UserOrder/UserOrder';
 import DashboardHome from './Dashboard/DashboardHome/DashboardHome';
+import RateUs from './Dashboard/Users/RateUs/RateUs';
+import MakeAdmin from './Dashboard/Admin/MakeAdmin/MakeAdmin';
 
 function App() {
   return (
@@ -32,6 +34,8 @@ function App() {
             <Route path='/dashboard' element={<PrivateRoute><Dashboard></Dashboard></PrivateRoute>}>
               <Route path='' element={<DashboardHome></DashboardHome>}></Route>
               <Route path='userOrders' element={<UserOrder></UserOrder>}></Route>
+              <Route path='makeAdmin' element={<MakeAdmin />}></Route>
+              <Route path='rate' element={<RateUs></RateUs>}></Route>
             </Route>
             <Route path='/launch' element={<Launch />}></Route>
             <Route path='/dinner' element={<Dinner />}></Route>

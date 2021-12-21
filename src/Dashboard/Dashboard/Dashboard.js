@@ -14,7 +14,7 @@ import Navigation from '../../pages/Home/Navigation/Navigation';
 const drawerWidth = 240;
 
 function Dashboard(props) {
-    
+
     const { window } = props;
     const [mobileOpen, setMobileOpen] = React.useState(false);
 
@@ -37,32 +37,37 @@ function Dashboard(props) {
                     <NavLink className=' dash-link' to='/dashboard/userOrders'
                         sx={{ my: 2, display: 'block', color: 'gray' }}
                     >
-                     <i class="fab fa-shopify"></i>   My Orders
+                        <i class="fab fa-shopify"></i>   My Orders
+                    </NavLink>
+                    <NavLink className=' dash-link' to='/dashboard/rate'
+                        sx={{ my: 2, display: 'block', color: 'gray' }}
+                    >
+                        <i class="far fa-smile"></i>   Rate us
+                    </NavLink>
+                    <NavLink className=' dash-link' to='/dashboard/cart'
+                        sx={{ my: 2, display: 'block', color: 'gray' }}
+                    >
+                        <i class="fas fa-cart-plus"></i>  My cart
+                    </NavLink>
+                    <NavLink className=' dash-link' to='/dashboard/billing'
+                        sx={{ my: 2, display: 'block', color: 'gray' }}
+                    >
+                        <i class="fas fa-shopping-bag"></i>  Billing & shipping info
+                    </NavLink>
+                    <NavLink className=' dash-link' to='/dashboard/payment'
+                        sx={{ my: 2, display: 'block', color: 'gray' }}
+                    >
+                        <i class="fas fa-history"></i>  order & payment history
                     </NavLink>
                     <NavLink className=' dash-link' to='/dashboard/userOrders'
                         sx={{ my: 2, display: 'block', color: 'gray' }}
                     >
-                     <i class="far fa-smile"></i>   Rate us
+                        <i class="far fa-user"></i>  profile
                     </NavLink>
-                    <NavLink className=' dash-link' to='/dashboard/userOrders'
+                    <NavLink className=' dash-link' to='/dashboard/makeAdmin'
                         sx={{ my: 2, display: 'block', color: 'gray' }}
                     >
-                      <i class="fas fa-cart-plus"></i>  My cart
-                    </NavLink>
-                    <NavLink className=' dash-link' to='/dashboard/userOrders'
-                        sx={{ my: 2, display: 'block', color: 'gray' }}
-                    >
-                      <i class="fas fa-shopping-bag"></i>  Billing & shipping info
-                    </NavLink>
-                    <NavLink className=' dash-link' to='/dashboard/userOrders'
-                        sx={{ my: 2, display: 'block', color: 'gray' }}
-                    >
-                      <i class="fas fa-history"></i>  order & payment history
-                    </NavLink>
-                    <NavLink className=' dash-link' to='/dashboard/userOrders'
-                        sx={{ my: 2, display: 'block', color: 'gray' }}
-                    >
-                      <i class="far fa-user"></i>  profile
+                        <i class="far fa-user"></i>  Make Admin
                     </NavLink>
                 </Box>
 
@@ -124,7 +129,7 @@ function Dashboard(props) {
                     </Drawer>
                 </Box>
 
-               
+
 
                 <Outlet></Outlet>
 
