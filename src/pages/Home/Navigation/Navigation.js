@@ -32,7 +32,7 @@ const Navigation = () => {
     return (
         <Box sx={{ backgroundColor: '#00458dd1' }}>
             <Box sx={{ flexGrow: 1 }}>
-                <AppBar position="static" sx={{ backgroundColor: '#00458dd1', color: 'gray', boxShadow: 'none', border: 'none' }}>
+                <AppBar position="static" sx={{ backgroundColor: '#53585b ', color: 'gray', boxShadow: 'none', border: 'none' }}>
                     <Container maxWidth="xl">
                         <Toolbar disableGutters>
 
@@ -132,10 +132,10 @@ const Navigation = () => {
                                 </Tooltip>
 
                             </Box> :
-                                <Link className='link links' to='/login'
-                                    sx={{ my: 2, display: 'block', color: 'gray' }}
+                                <Link className='link sign-in' to='/login'
+                                    sx={{ my: 2, display: 'block', color: 'tomato' }}
                                 >
-                                    log in
+                                    Log in
                                 </Link>}
                             {user.email && <button className='log-out' onClick={logOut} style={{ margin: '0 2px' }}>log out</button>}
                         </Toolbar>

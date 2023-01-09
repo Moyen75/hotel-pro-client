@@ -27,14 +27,14 @@ const Booking = () => {
                     </Grid>
                 </Box>
             </Box>
-            <Box sx={{ height: '200px', backgroundColor: '#f2745f', alignItems: 'center', display: 'flex', justifyContent: 'center', color: 'white' }}>
+            <Box sx={{ height: '200px', backgroundColor: '#53585b', alignItems: 'center', display: 'flex', justifyContent: 'center', color: 'white' }}>
                 <Box>
                     <Typography variant='h5' sx={{ paddingY: '20px' }}>
                         GET APPLICATION FOR YOUR PHONE
                     </Typography>
                     <Button sx={{
-                        backgroundColor: 'tomato', color: 'white', '&:hover': {
-                            background: "white", color: 'tomato'
+                        backgroundColor: '#12adeb', color: 'white', '&:hover': {
+                            background: "#12adeb", color: 'black'
                         },
                     }} variant='contained' className='banner-button'>Download Now</Button>
                 </Box>
