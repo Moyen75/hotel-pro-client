@@ -304,7 +304,96 @@
 }
 
 /* login */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.login-box {
+    position: relative;
+    width: 400px;
+    height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #fff; */
+}
+
+.login-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 25px;
+    height: 100%;
+    background: linear-gradient(#fff, #fff, #e3e3e3);
+    filter: blur(1px);
+    z-index: 1;
+}
+
+.login-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 25px;
+    height: 100%;
+    background: linear-gradient(#fff, #fff, #9d9d9d);
+    filter: blur(1px);
+    z-index: 1;
+}
+
+.login-shadow {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #eee;
+}
+
+.login-shadow::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: calc(100% + 96px);
+    width: 120%;
+    height: 240%;
+    background: linear-gradient(rgba(0, 0, 0, 0.075), transparent);
+    transform: skewX(45deg);
+}
+
+.login-shadow::after {
+    content: "";
+    position: absolute;
+    bottom: -200%;
+    left: calc(100% + 80px);
+    width: 100%;
+    height: 200%;
+    background: linear-gradient(rgba(0, 0, 0, 0.075), transparent);
+    transform: skewX(45deg);
+}
+
+.login-cover {
+    position: absolute;
+    top: 0;
+    left: -100px;
+    width: 100px;
+    height: 100px;
+    background: #cfd1e1;
+    z-index: 10;
+}
+
+.link-content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#dbdae1, #a3aaba);
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.1),
+        15px 15px 15px rgba(0, 0, 0, 0.1),
+        20px 10px 20px rgba(0, 0, 0, 0.1),
+        50px 50px 80px rgba(0, 0, 0, 0.25),
+        inset 3px 3px 2px #fff;
+}
 
 .login-input {
     width: 50%;
