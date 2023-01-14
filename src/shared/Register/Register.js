@@ -1,12 +1,9 @@
-import { Container, Grid, TextField } from '@mui/material';
 import { Box } from '@mui/system';
 import React, { useState } from 'react';
-import loginImg from '../../images/others/undraw_secure_login_pdn4.png'
 import swal from 'sweetalert';
 import useAuth from '../../hooks/useAuth';
 import { useNavigate } from 'react-router';
 import { Link } from 'react-router-dom';
-import Footer from '../../pages/Home/Footer/Footer';
 
 
 const Register = () => {
@@ -38,72 +35,52 @@ const Register = () => {
     }
     const handleOnSubmit = (e) => {
         e.preventDefault()
-        if (userData?.password1 !== userData?.password2) {
-            error()
-            return
-        } else {
-            emailSignUp(userData.email, userData.password1, userData.name, success, navigate)
-        }
+        console.log(userData)
+        emailSignUp(userData.email, userData.password, userData.name, success, navigate)
     }
 
 
     return (
-        <Box sx={{ backgroundColor: "#f4f4f4" }}>
-            <Container >
-                <Box sx={{ paddingY: "70px" }}>
-                    <Grid container spacing={2}>
-                        <Grid item xs={12} md={6}>
-                            <Box sx={{ maxWidth: "600px" }}>
-                                <h1> REGISTER NOW</h1>
-                                <form onSubmit={handleOnSubmit}>
-                                    <TextField
-                                        id="standard-basic" label="Full Name"
-                                        name='name'
-                                        sx={{ width: '55%' }}
-                                        onBlur={handleOnBlur} variant="standard"
-                                        type="text"
-                                        required
-                                    />
-                                    <TextField
-                                        id="standard-basic" label="Email"
-                                        name='email'
-                                        sx={{ width: '55%' }}
-                                        onBlur={handleOnBlur} variant="standard"
-                                        type="email"
-                                        required
-                                    />
-                                    <TextField
-                                        id="standard-basic" label="Password"
-                                        name='password1'
-                                        sx={{ width: '55%' }}
-                                        onBlur={handleOnBlur} variant="standard"
-                                        type="password"
-                                        required
-                                    />
-                                    <TextField
-                                        id="standard-basic" label="Confirm Password"
-                                        name='password2'
-                                        sx={{ width: '55%' }}
-                                        onBlur={handleOnBlur} variant="standard"
-                                        type="password"
-                                        required
-                                    />
-                                    <input className='submit' style={{ display: "block", margin: "10px auto" }} type='submit' value='Register Now' />
-                                </form>
-                            </Box>
-                            <Box sx={{ marginY: '15px' }}>
-                                <span>Already Have an Account?</span> <Link className='link' to='/login'>Sign in</Link>
-                            </Box>
-                        </Grid>
-                        <Grid item xs={12} md={6}>
-                            <Box sx={{ display: { xs: 'none', md: "inline" } }}>
-                                <img style={{ width: '100%' }} src={loginImg} alt="" />
-                            </Box>
-                        </Grid>
-                    </Grid>
-                </Box>
-            </Container>
-            <Footer></Footer>
+        <Box sx={{ backgroundColor: "#cfd1e1", overflow: "hidden", display: "flex", justifyContent: "center", alignItems: "center", minHeight: "100vh" }}>
+            <div className="login-container">
+                <div className="login-box">
+                    <div className="login-cover"></div>
+                    <div className="login-shadow"></div>
+                    <div className="login-content">
+
+                        <div className="login-form">
+                            {
+                                error && <p className='error'>{error}</p>
+                            }
+                            <h3 className="login-logo">
+                                <i className="fa-solid fa-key"></i>
+                            </h3>
+                            <h2>sign up</h2>
+                            <div className="input-box">
+                                <input onBlur={handleOnBlur} name="name" type="text" required />
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Full name</span>
+                            </div>
+                            <div className="input-box">
+                                <input onBlur={handleOnBlur} name="email" type="text" required />
+                                <i class="fa-solid fa-envelope"></i>
+                                <span>Email</span>
+                            </div>
+                            <div className="input-box">
+                                <input onChange={handleOnBlur} name="password" type="password" required />
+                                <i class="fa-solid fa-lock"></i>
+                                <span>password</span>
+                            </div>
+                            <div className="login-links">
+                                <span>Have an account <i class="fa-solid fa-question"></i></span> <span><Link to="/login"> Sign in <i class="fa-solid fa-user-plus"></i></Link></span>
+                            </div>
+                            <div className="input-box">
+                                <input type="submit" onClick={handleOnSubmit} value="Sign up" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </Box>
     );
 };

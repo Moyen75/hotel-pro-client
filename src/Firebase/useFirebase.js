@@ -32,9 +32,10 @@ const useFirebase = () => {
     // create user with email and password
     const emailSignUp = (email, password, name, success, navigate) => {
         setLoading(true)
-
+        console.log(email, password, name)
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
+                console.log(result)
                 success(result.user.displayName)
                 saveUser(result.user.email, name, 'POST')
                 navigate('/')
@@ -65,6 +66,7 @@ const useFirebase = () => {
                 navigate(from)
             })
             .catch(error => {
+                console.log(error.message)
                 setError(error.message)
             })
             .finally(() => setLoading(false))

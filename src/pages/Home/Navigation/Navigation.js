@@ -113,36 +113,28 @@ const Navigation = () => {
                                     <Link className='link links' to='/cart'
                                         sx={{ my: 2, display: 'block', color: 'gray' }}
                                     >
-                                        <i class="fas fa-cart-plus"></i>
+                                        <i className="fas fa-cart-plus"></i>
                                     </Link>
 
 
                                 </Box>
                             </Box>
-                            {user.email ? <Box sx={{ flexGrow: 0 }}>
+                            <Box sx={{ flexGrow: 0 }}>{user.email ?
                                 <Tooltip>
                                     {
-                                        user.photoURL ? <Avatar alt='new' src={user.photoURL} /> : <Box sx={{ display: "flex", justifyContent: 'center' }}>
-                                            <Typography>
-                                                {user.displayName ? user.displayName : user.email}
-                                            </Typography>
-                                            <Avatar alt='new'  ><i class="far fa-user"></i></Avatar>
-                                        </Box>
+                                        user.photoURL ? <Avatar alt='new' src={user.photoURL} /> : <Avatar alt='new'  ><i className="far fa-user"></i></Avatar>
                                     }
-                                </Tooltip>
-
-                            </Box> :
-                                <Link className='link sign-in' to='/login'
+                                </Tooltip> : <Link className='link sign-in' to='/login'
                                     sx={{ my: 2, display: 'block', color: 'tomato' }}
                                 >
                                     Log in
                                 </Link>}
-                            {user.email && <button className='log-out' onClick={logOut} style={{ margin: '0 2px' }}>log out</button>}
+                            </Box>
                         </Toolbar>
                     </Container>
                 </AppBar>
             </Box>
-        </Box>
+        </Box >
     );
 };
 
