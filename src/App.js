@@ -2,9 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home/Home/Home';
 import Breakfast from './shared/Breakfast/Breakfast';
-import Footer from './pages/Home/Footer/Footer';
 import Launch from './shared/Launch/Launch';
-import Navigation from './pages/Home/Navigation/Navigation';
 import Dinner from './shared/Dinner/Dinner';
 import BreakfastDetails from './shared/BreakfastDetails/BreakfastDetails';
 import LaunchDetails from './shared/LaunchDetails/LaunchDetails';
@@ -18,13 +16,13 @@ import UserOrder from './Dashboard/Users/UserOrder/UserOrder';
 import DashboardHome from './Dashboard/DashboardHome/DashboardHome';
 import RateUs from './Dashboard/Users/RateUs/RateUs';
 import MakeAdmin from './Dashboard/Admin/MakeAdmin/MakeAdmin';
+import Chat from './Components/Chat';
 
 function App() {
   return (
     <div className="App">
       <AuthProvider>
         <BrowserRouter>
-          <Navigation />
           <Routes>
             <Route path='/' element={<Home />}></Route>
             <Route path='/breakfast' element={<Breakfast />}></Route>
@@ -37,6 +35,7 @@ function App() {
               <Route path='makeAdmin' element={<MakeAdmin />}></Route>
               <Route path='rate' element={<RateUs></RateUs>}></Route>
             </Route>
+            <Route path='/chat' element={<Chat />}></Route>
             <Route path='/launch' element={<Launch />}></Route>
             <Route path='/dinner' element={<Dinner />}></Route>
             <Route path='/login' element={<Login />}></Route>

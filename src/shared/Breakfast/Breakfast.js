@@ -4,6 +4,7 @@ import React from 'react';
 import { useNavigate } from 'react-router';
 import useBreakfast from '../../hooks/useBreakfast';
 import Footer from '../../pages/Home/Footer/Footer';
+import Navigation from '../../pages/Home/Navigation/Navigation';
 
 const Breakfast = () => {
     const breakfast = useBreakfast()
@@ -13,6 +14,7 @@ const Breakfast = () => {
     }
     return (
         <Box>
+            <Navigation />
             {
                 breakfast && <Container>
                     <Typography variant='h4' className='breakfast'>

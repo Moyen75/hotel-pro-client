@@ -1,6 +1,7 @@
 import { Box } from '@mui/system';
 import { Container, Grid, Typography } from '@mui/material';
-import useLaunch from '../../hooks/useLaunch'
+import useLaunch from '../../hooks/useLaunch';
+import Navigation from '../../pages/Home/Navigation/Navigation';
 
 import React from 'react';
 import { useNavigate } from 'react-router';
@@ -14,6 +15,7 @@ const Launch = () => {
     }
     return (
         <Box>
+            <Navigation />
             {
                 launch && <Container>
                     <Typography variant='h4' className='breakfast'>

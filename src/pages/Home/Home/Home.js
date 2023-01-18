@@ -6,10 +6,12 @@ import Footer from '../Footer/Footer';
 import MenuItems from '../MenuItems/MenuItems';
 import Order from '../Order/Order';
 import Types from '../Types/Types';
+import Navigation from '../Navigation/Navigation';
 
 const Home = () => {
     return (
         <div>
+            <Navigation />
             <Banner></Banner>
             <Order></Order>
             <MenuItems></MenuItems>

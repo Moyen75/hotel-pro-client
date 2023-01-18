@@ -26,7 +26,7 @@ const Login = () => {
             setErr(false)
             setEmail("")
         }
-    }, [err])
+    }, [err, user, navigate])
     const handleEmail = e => {
         const email = e.target.value;
         const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
